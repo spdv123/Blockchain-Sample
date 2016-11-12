@@ -1,6 +1,7 @@
-# Blockchain-Sample
+﻿# Blockchain-Sample
 
 ## 这是一个有关区块链的简单示例，程序应当运行在同一个主机
+
 
 ## 实现功能
 * 路由
