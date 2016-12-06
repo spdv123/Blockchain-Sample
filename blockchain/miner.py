@@ -9,12 +9,12 @@ class BitcoinMiner(object):
         nonce = 0;
 
         while True:
-            hexDig = hashlib.sha256((data + str(nonce)).encode()).hexdigest()                        
+            hexDig = hashlib.sha256((data + str(nonce)).encode()).hexdigest()
             if hexDig.startswith(target):
-                return hexDig, nonce                
+                return hexDig, nonce
             nonce += 1
-             
-if __name__ == '__main__': 
+
+if __name__ == '__main__':
     client = BitcoinMiner()
     hashedValue, nonce = client.miner('This is a string', '0000')
     print(hashedValue)
