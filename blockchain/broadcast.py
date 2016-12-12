@@ -15,16 +15,17 @@ class Broadcaster:
         import socket
         s = socket.socket()
         for i in range(22000, 23000):
-            try:
-                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                s.connect(('127.0.0.1', i))
-                s.send(message)
-                print '向', i, '发送了消息'
-            except socket.error:
-                pass
-            finally:
-                s.close()
+            if True:
+                try:
+                    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    s.connect(('127.0.0.1', i))
+                    s.send(message)
+                    print '向', i, '发送了消息'
+                except socket.error:
+                    pass
+                finally:
+                    s.close()
 
 if __name__ == '__main__':
     br = Broadcaster()
-    br.broadcast('hello')
+    br.broadcast('1 2 3')
