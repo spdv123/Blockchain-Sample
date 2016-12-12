@@ -20,6 +20,7 @@ Thumbs.db
 
 # remove SVN
 .svn
+.pyc
 
 # for Xcode
 .*.swp
