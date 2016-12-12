@@ -1,21 +1,24 @@
 import hashlib
 
-class BitcoinMiner(object):
+class BitcoinMiner:
     """
     bitcoin miner
     """
 
-    def miner(_self, data, target):
+    def __init__(self, clientID):
+        self.clientID = clientID
+
+    def miner(self, data, target):
         nonce = 0;
 
         while True:
-            hexDig = hashlib.sha256((data + str(nonce)).encode()).hexdigest()
+            hexDig = hashlib.sha256((data + self.clientID + str(nonce)).encode()).hexdigest()
             if hexDig.startswith(target):
                 return hexDig, nonce
             nonce += 1
 
 if __name__ == '__main__':
-    client = BitcoinMiner()
-    hashedValue, nonce = client.miner('This is a string', '0000')
+    client = BitcoinMiner('deadbeef')
+    hashedValue, nonce = client.miner('This is a string', '00000')
     print(hashedValue)
     print(nonce)
