@@ -35,4 +35,5 @@ Thumbs.db
 
 # for blockchain
 *.pyc
+blockchain/*.pyc
 */out/*

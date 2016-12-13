@@ -12,7 +12,7 @@ class BitcoinMiner:
         nonce = 0;
 
         while True:
-            hexDig = hashlib.sha256((data + self.clientID + str(nonce)).encode()).hexdigest()
+            hexDig = hashlib.sha256(data + self.clientID + str(nonce)).hexdigest()
             if hexDig.startswith(target):
                 return hexDig, nonce
             nonce += 1

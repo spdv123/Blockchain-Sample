@@ -34,7 +34,7 @@ class RClient(Protocol):
         count += 1
         if _rnd[count % len(_rnd)] == str(_uid):
             #print 'Turn to me'
-            hsh, nounce = BitcoinMiner(_clientID).miner(data, '00000') # 这里阻塞了
+            hsh, nounce = BitcoinMiner(_clientID).miner(hashed, '00000') # 这里阻塞了
             Broadcaster().broadcast(_clientID + ' ' + str(nounce) + ' ' + hsh)
 
 class Client(Protocol):

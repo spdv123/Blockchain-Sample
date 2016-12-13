@@ -20,7 +20,7 @@ class Broadcaster:
                     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                     s.connect(('127.0.0.1', i))
                     s.send(message)
-                    print '向', i, '发送了消息'
+                    print '向#', i - 22000, '发送了消息'
                 except socket.error:
                     pass
                 finally:
