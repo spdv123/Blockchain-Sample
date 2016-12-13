@@ -7,10 +7,18 @@ def main():
     import random, sys, fns, hashlib, time
     from broadcast import Broadcaster
     if len(sys.argv) < 2:
-        print "Usage: python manager.py [clientNum]"
+        print "Usage: python manager.py clientNum"
+        print "clientNum should in range(1, 10)"
+        exit(1)
+    try:
+        num = int(sys.argv[1])
+        assert num < 10
+        assert num > 0
+    except:
+        print "Usage: python manager.py clientNum"
+        print "clientNum should in range(1, 10)"
         exit(1)
     cid = []
-    num = int(sys.argv[1])
     for i in range(num):
         cid.append(hashlib.sha256(str(random.randint(0,600000)+i*600001)).hexdigest())
     rnd = ''
