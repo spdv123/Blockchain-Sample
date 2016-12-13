@@ -35,4 +35,4 @@ Thumbs.db
 
 # for blockchain
 .pyc
-out/*
+*/out/*
