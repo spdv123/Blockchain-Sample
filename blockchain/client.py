@@ -66,7 +66,7 @@ class Client(Protocol):
 if __name__ == '__main__':
     import sys
     if len(sys.argv) < 5:
-        print "Usage: python client.py [clientID] [rnd] [port] [uid]"
+        print "Usage: python client.py clientID rnd port uid"
         exit(1)
     global _rnd, _uid, _clientID, _port
     _clientID = str(sys.argv[1])
