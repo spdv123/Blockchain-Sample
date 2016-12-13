@@ -4,8 +4,11 @@ class RWer():
     def __init__(self,selfID):
         self.selfID=selfID
     def save(self,clientID,randnum,hashnum):
+        import os
+        path=os.path.dirname(os.path.abspath(__file__))
+        # print path
         try:
-            f=open("./out/" + self.selfID,"a")
+            f=open(path+"/out/" + self.selfID,"a")
             f.write("=======================================\n")
             f.write("clientID:%s\n"%clientID)
             f.write("randnum:%s\n"%randnum)

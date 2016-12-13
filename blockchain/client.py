@@ -68,7 +68,6 @@ if __name__ == '__main__':
     if len(sys.argv) < 5:
         print "Usage: python client.py clientID rnd port uid"
         exit(1)
-    global _rnd, _uid, _clientID, _port
     _clientID = str(sys.argv[1])
     _rnd = str(sys.argv[2])
     _uid = int(sys.argv[4])

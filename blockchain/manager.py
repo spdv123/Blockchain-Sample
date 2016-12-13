@@ -12,12 +12,14 @@ def main():
     cid = []
     num = int(sys.argv[1])
     for i in range(num):
-        cid.append(hashlib.sha256(str(random.randint(0,600000))).hexdigest())
+        cid.append(hashlib.sha256(str(random.randint(0,600000)+i*600001)).hexdigest())
     rnd = ''
     for i in range(100):
         rnd += str( random.randint(0, 100) % num )
+    import os
+    path = os.path.abspath('.')
     for i in range(num):
-        fns.runNewCmd('python client.py ' + cid[i] + ' ' + rnd + ' ' + str(22000+i) + ' ' + str(i))
+        fns.runNewCmd('python '+path+'/client.py ' + cid[i] + ' ' + rnd + ' ' + str(22000+i) + ' ' + str(i))
     time.sleep(1)
     Broadcaster().broadcast('deadbeef'*8 + ' ' + str(888888) + ' ' + 'deadbeef'*8)
 
